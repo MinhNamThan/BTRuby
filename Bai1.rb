@@ -1,28 +1,50 @@
-arr = Array.new 5
-sum = 0
-p "Enter values: "
-for i in 0..4
-    tmp = gets.chomp
-    if tmp == ""
-        arr[i] = 0
-    else    
-        arr[i] = tmp.to_i
-        sum = sum + arr[i];
-    end
-end
-print("array after enter values: ", arr)
-print("\n")
-print("sum = ", sum)
-print("\n")
-puts("Use Proc: ")
-square = Proc.new do |n|
-    n ** 2
-end
-for i in 0..4
-    if(arr[i] == 6..7)
-        print "#{arr[i]} "
-    else
-        print "#{square.call(arr[i])} "
-    end
-end
-print "\n"
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
