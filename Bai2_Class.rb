@@ -38,6 +38,7 @@ def input(lt)
     puts "Nhap thong tin"
     print "Name: "
     name = gets.chomp
+    name = name.strip
     print "\nscore math: "
     math = gets.chomp.to_f
     print "\nscore literature: "
