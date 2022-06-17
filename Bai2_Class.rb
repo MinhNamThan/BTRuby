@@ -1,36 +1,40 @@
 class Student
+    @@highest_score = 0
     def initialize name, math, literature, english
         @name = name
         @math = math
         @literature = literature
-        @english =  english
+        @english = english
+        if @@highest_score < (@math.to_f + @literature.to_f + @english.to_f)/3
+            @@highest_score = (@math.to_f + @literature.to_f + @english.to_f)/3
+        end
     end
-    def getName
+    def get_name
         @name
     end
-    def getScoreMath
+    def get_score_math
         @math
     end
-    def getScoreLiterature
+    def get_score_literature
         @literature
     end
-    def getScoreEnglish
+    def get_score_english
         @english
     end
-    def setName value
+    def set_name value
         @name = value
     end
-    def setScoreMath value
+    def set_score_math value
         @math = value
     end
-    def setScoreLiterature value
+    def set_score_literature value
         @literature = value
     end
-    def setScoreEnglish value
+    def set_score_english value
         @english = value
     end
-    def getScoreAGV
-        (@math.to_f + @literature.to_f + @english.to_f)/3
+    def self.get_hight_score
+        @@highest_score
     end
 end
 listStudent = Array.new
@@ -48,21 +52,9 @@ def input(lt)
     st = Student.new name,math,literature,english
     # p st.getScoreAGV
     lt.push st
-    lt[0].getScoreAGV
 end
-def highestScore(lt)
-    agv = 0.0
-    p lt.length
-    p lt[0].getScoreAGV
-    for i in 0..(lt.length-1)
-        tmp = lt[i].getScoreAGV
-        if(agv < tmp)
-            agv = tmp
-        end
-    end
-    puts "Diem TB lon nhat #{agv}"
-end
+
 input(listStudent)
 input(listStudent)
-highestScore(listStudent)
+p "Diem so trung binh cao nhat la: #{Student.get_hight_score}"
 
