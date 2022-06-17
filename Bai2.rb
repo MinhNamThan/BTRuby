@@ -1,4 +1,4 @@
-def inputInfor(h = {}) 
+def input_infor(h = {}) 
     name = gets.chomp
     math = gets.chomp.to_f
     literature = gets.chomp.to_f
@@ -6,7 +6,7 @@ def inputInfor(h = {})
     averange = (math + literature + english)/3
     h.store name,{"toan"=>math,"van" => literature, "anh" =>english, "TB"=> averange}
 end
-def highestScore(h = {})
+def highest_score(h = {})
     
     for key in h.keys
         p $agv
@@ -27,9 +27,9 @@ while 1 do
     puts "others to finish"
     k = gets.chomp
     if k == "1"
-        inputInfor(h)
+        input_infor(h)
     elsif k == "2"
-        highestScore(h)
+        highest_score(h)
         puts "Nguoi co diem TB cao nhat: #{$bestName} voi so diem: #{$agv}"
     else
         break
